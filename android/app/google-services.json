@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "645772272408",
+    "project_id": "vuzgid-fc01b",
+    "storage_bucket": "vuzgid-fc01b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:645772272408:android:6301b572a104a35721f46d",
+        "android_client_info": {
+          "package_name": "com.example.gstou4"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7UzFBzHmDgya1YYecEzwluIbH2xmsg44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
