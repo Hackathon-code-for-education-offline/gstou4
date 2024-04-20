@@ -19,6 +19,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
   String email = '';
   String password = '';
 
+  String error = '';
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +52,16 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 password = value;
               });},
             ),
+            Text(error),
             TextButton(
               onPressed: () async {
                 if (_formKey.currentState!.validate()) {
                   dynamic response = await _auth.signUp(email, password);
+                  if (response == null) {
+                    setState(() {
+                      error = "Введите правильный почтовый адрес";
+                    });
+                  }
                 }
               },
               child: const Text("Зарегистрироваться"))

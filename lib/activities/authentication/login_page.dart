@@ -16,6 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   String password = '';
 
   final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Column(
         children: [
           Form(
+            key: _formKey,
             child: Column(
               children: [
                 TextFormField(
@@ -49,7 +51,16 @@ class _LoginPageState extends State<LoginPage> {
                     }, child: const Text("Регистрация"))
                   ],
                 ),
-                TextButton(onPressed: () {}, child: const Text("Войти")),
+                TextButton(
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      dynamic response = await _auth.signIn(email, password);
+                      if (response == null) {
+                        print("sasd");
+                      }
+                    }
+                  },
+                  child: const Text("Войти")),
                 TextButton(
                   onPressed: () async {
                     dynamic response = await _auth.signInAnon();
