@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
           TextButton(
             onPressed: () async {
               dynamic response = await _auth.signInAnon();
-              print(response.toString());
+              print(response.uid.toString());
             },
             child: const Text("Sign In Anon"))
         ],
